@@ -1,0 +1,63 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/commodity_center?serverTimezone=GMT
+    hikari:
+      username: root
+      password: hwq2019
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        #        指定nacos 服务器地址
+        server-addr: localhost:8848
+        enabled: true
+        cluster-name: nanjing
+    stream:
+      rocketmq:
+        binder:
+          namesrv-addr: 127.0.0.1:9876
+      bindings:
+        my-input:
+          destination: transaction-stock
+          #          一定要设置
+          #          如果用的其他MQ,可留空
+          group: binder-group
+
+        alter-transaction:
+          destination: alter-transaction
+          group: my-group
+  zipkin:
+    base-url: http://localhost:9411/
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      #      抽样率
+      probability: 1.0
+
+  application:
+    #    不要用下划线和特殊字符
+    name: commodity-center
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      resolve-lazily: true
+      max-request-size: 20MB
+server:
+  port: 8012
+  tomcat:
+    max-swallow-size: -1
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-center
+#    rocketmq
+#rocketmq:
+#  name-server: 127.0.0.1:9876
+logging:
+  level:
+    com.alibaba.nacos: error
+#    jwt
+jwt:
+  secret: qwertyuiopasdfghjkl
+  # 有效期，单位秒，默认2周
+  expire-time-in-second: 1209600

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.commodity_center.dao.commodity_center.CategoryMapper">
+  <resultMap id="BaseResultMap" type="com.mall.commodity_center.domain.entity.commodity_center.Category">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="categoey_id" jdbcType="VARCHAR" property="categoeyId" />
+    <result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+  </resultMap>
+</mapper>

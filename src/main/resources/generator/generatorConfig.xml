@@ -1,0 +1,162 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator/config.properties"/>
+    <!--brand表-->
+    <context id="brand" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+        <!--        实体-->
+        <javaModelGenerator targetPackage="com.mall.commodity_center.domain.entity.${moduleName}"
+                            targetProject="src/main/java"/>
+        <!--        mapper.xml-->
+        <sqlMapGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                         targetProject="src/main/resources"/>
+        <!--        mapper接口-->
+        <javaClientGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="${tableName}">
+            <generatedKey column="brand_id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+    <!--   commodity表 -->
+    <context id="commodity" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+        <!--        实体-->
+        <javaModelGenerator targetPackage="com.mall.commodity_center.domain.entity.${moduleName}"
+                            targetProject="src/main/java"/>
+        <!--        mapper.xml-->
+        <sqlMapGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                         targetProject="src/main/resources"/>
+        <!--        mapper接口-->
+        <javaClientGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="${commodityTableName}">
+            <generatedKey column="commodity_id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+    <!--    commodity_info表-->
+    <context id="commodity-info" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+        <!--        实体-->
+        <javaModelGenerator targetPackage="com.mall.commodity_center.domain.entity.${moduleName}"
+                            targetProject="src/main/java"/>
+        <!--        mapper.xml-->
+        <sqlMapGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                         targetProject="src/main/resources"/>
+        <!--        mapper接口-->
+        <javaClientGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="${commodityInfoTableName}">
+            <generatedKey column="commodity_id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+    <!--    commodity_info_log-->
+    <context id="commodity_info_log" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+        <!--        实体-->
+        <javaModelGenerator targetPackage="com.mall.commodity_center.domain.entity.${moduleName}"
+                            targetProject="src/main/java"/>
+        <!--        mapper.xml-->
+        <sqlMapGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                         targetProject="src/main/resources"/>
+        <!--        mapper接口-->
+        <javaClientGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="${commodityInfoLogTableName}">
+            <generatedKey column="log_id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+<!--    category-->
+    <context id="category" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Getter,Setter,ToString"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+        <!--        实体-->
+        <javaModelGenerator targetPackage="com.mall.commodity_center.domain.entity.${moduleName}"
+                            targetProject="src/main/java"/>
+        <!--        mapper.xml-->
+        <sqlMapGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                         targetProject="src/main/resources"/>
+        <!--        mapper接口-->
+        <javaClientGenerator targetPackage="com.mall.commodity_center.dao.${moduleName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="${categoryTableName}">
+            <generatedKey column="commodity_id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+</generatorConfiguration>
